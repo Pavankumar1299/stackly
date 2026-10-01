@@ -1,0 +1,2 @@
+101,pavan,pk@gmail.com,99.0,98,ACTIVE
+102,anna,anna@gmail.com,99.0,99,ACTIVE
