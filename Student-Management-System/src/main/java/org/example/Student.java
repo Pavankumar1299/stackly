@@ -1,19 +1,23 @@
 package org.example;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Student {
 
     private int id;
     private String name;
     private String email;
-    private double marks;
     private int attendance;
     private StudentStatus status;
+    private Map<Integer, Double> courseMarks = new HashMap<>();
+    private String grade;
+    private double percentage;
 
-    public Student(int id, String name, String email, double marks, int attendance, StudentStatus status) {
+    public Student(int id, String name, String email, int attendance, StudentStatus status) {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.marks = marks;
         this.attendance = attendance;
         this.status = status;
     }
@@ -42,14 +46,6 @@ public class Student {
         this.name = name;
     }
 
-    public double getMarks() {
-        return marks;
-    }
-
-    public void setMarks(double marks) {
-        this.marks = marks;
-    }
-
     public int getAttendance() {
         return attendance;
     }
@@ -66,15 +62,41 @@ public class Student {
         this.status = status;
     }
 
+    public Map<Integer, Double> getCourseMarks() {
+        return courseMarks;
+    }
+
+    public void setCourseMarks(Map<Integer, Double> courseMarks) {
+        this.courseMarks = courseMarks;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
+    public double getPercentage() {
+        return percentage;
+    }
+
+    public void setPercentage(double percentage) {
+        this.percentage = percentage;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
-                ", marks=" + marks +
+//                ", marks=" + marks +
                 ", attendance=" + attendance +
                 ", status=" + status +
+//                ", grade='" + grade + '\'' +
+//                ", percentage=" + percentage +
                 '}';
     }
 }

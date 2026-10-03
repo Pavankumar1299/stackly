@@ -1,2 +1,10 @@
-101,pavan,pk@gmail.com,99.0,98,ACTIVE
-102,anna,anna@gmail.com,99.0,99,ACTIVE
+101,Aarav Sharma,aarav@gmail.com,92,ACTIVE,101:85.0|102:78.0|103:92.0|104:80.0|105:88.0,84.6,B
+102,Anna Yamada,anna@gmail.com,88,ACTIVE,101:92.0|102:85.0|103:89.0|104:94.0|105:91.0,90.2,A
+103,Rohan Kulkarni,rohan@gmail.com,95,ACTIVE,101:76.0|102:82.0|103:79.0|104:85.0|105:80.0,80.4,B
+104,Priya Deshmukh,priya@gmail.com,87,ACTIVE,101:95.0|102:91.0|103:93.0|104:88.0|105:96.0,92.6,A
+105,Aditya Joshi,aditya@gmail.com,84,ACTIVE,101:68.0|102:74.0|103:81.0|104:70.0|105:77.0,74.0,C
+106,Sneha Rao,sneha@gmail.com,91,ACTIVE,101:88.0|102:90.0|103:86.0|104:92.0|105:89.0,89.0,B
+107,Pavan Pattar,pavan@gmail.com,79,INACTIVE,101:72.0|102:65.0|103:70.0|104:68.0|105:74.0,69.8,C
+108,Ananya Shetty,ananya@gmail.com,96,COMPLETED,101:98.0|102:94.0|103:97.0|104:91.0|105:95.0,95.0,A
+109,Karan Nayak,karan@gmail.com,87,ACTIVE,101:81.0|102:79.0|103:84.0|104:76.0|105:83.0,80.6,B
+110,Meera Gowda,meera@gmail.com,93,COMPLETED,101:90.0|102:87.0|103:91.0|104:89.0|105:94.0,90.2,A
