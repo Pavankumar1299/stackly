@@ -2,18 +2,43 @@ package org.example;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
+
+import static org.example.Category.*;
 
 public class InventoryService {
 
     Map<Integer, Products> products = new HashMap<>();
     Map<Integer, Integer> soldProducts = new HashMap<>();
 
-    public void addProduct(Products product){
+    Random random = new Random();
+
+    public void loadProducts() {
+        products.put(1221, new Products(1221, "ipad AIR 21", LAPTOP,68999.0, 4));
+        products.put(1998, new Products(1998, "iphone 18", MOBILE,150000, 20));
+        products.put(1785, new Products(1785, "Knife", HOME_APPLIANCE,299, 75));
+        products.put(3562, new Products(3562, "Avita Liber A14", LAPTOP,48999, 10));
+        products.put(6787, new Products(6787, "RealMe 9 pro plus ", MOBILE,29999, 21));
+        products.put(1299, new Products(1299, "Washing Machine", HOME_APPLIANCE,21599, 5));
+        products.put(5675, new Products(5675, "Drill Machine", ACCESSORY,7999, 13));
+        products.put(9898, new Products(9898, "Asus new book 7", LAPTOP,52799, 3));
+    }
+
+    public void addProduct(String productName, Category category, double price, int stock) {
+
+        int productId = random.nextInt(1000,10000) + 1;
+        while (products.containsKey(productId)) {
+            productId = random.nextInt(1000,10000) + 1;
+        }
+
+        Products product = new Products(productId, productName, category, price, stock);
+
         if (products.containsKey(product.getProductId())) {
             System.out.println("Product already exists!");
         } else {
             products.put(product.getProductId(), product);
-            System.out.println("Added product " + product.getProductId());
+            System.out.println("Added product successfully");
+            System.out.println("ID: " + product.getProductId());
         }
     }
 
@@ -90,7 +115,7 @@ public class InventoryService {
         }
     }
 
-    public double totalBill() throws ProductException {
+    public void totalBill() throws ProductException {
 
         double total = 0;
 
@@ -125,7 +150,6 @@ public class InventoryService {
 
         soldProducts.clear();
 
-        return total;
     }
 
     public void deleteProduct(int productId) throws ProductException {

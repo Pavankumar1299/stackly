@@ -11,6 +11,13 @@ public class MovieBookingService {
     Map<Integer, Movie> movies = new HashMap<>();
     Map<Integer, int[][]> bookings = new HashMap<>();
 
+//    Show available seats
+//    Book ticket
+//    Cancel ticket
+//    Discount Coupon
+//    Weekend Pricing
+//    Movie Rating
+
     public void loadMovies() {
 
         movies.put(111, new Movie(111, "Life of PI", 350, 3.5));

@@ -2,11 +2,14 @@ package org.example;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class StudentService {
 
     Map<Integer, Student> students = new HashMap<Integer, Student>();
     Map<Integer, Course> courses = new HashMap<>();
+
+    Random random = new Random();
 
     public void createCourses() {
 
@@ -17,13 +20,21 @@ public class StudentService {
         courses.put(105, new Course(105, "DSA", 3));
     }
 
-    public void addStudent(Student student) throws StudentException {
-        if (students.containsKey(student.getId())) {
-            throw  new StudentException("Student already exists!");
-        } else {
-            students.put(student.getId(), student);
-            System.out.println("Student details saved successfully");
+    public int generateId() {
+        return 1000 + random.nextInt(1000) + 1;
+    }
+
+    public void addStudent(String name, String email, int attendance, StudentStatus status) throws StudentException {
+
+        int id = generateId();
+        while (students.containsKey(id)) {
+            id = generateId();
         }
+        Student student = new Student(id, name, email, attendance, status);
+
+        students.put(id, student);
+        System.out.println("Student details saved successfully");
+        System.out.println("Student ID is: " + id);
     }
 
     public void displayAllStudent() {

@@ -39,16 +39,6 @@ public class Main {
             switch (choice) {
 
                 case 1 -> {
-
-                    System.out.print("Enter Student ID: ");
-                    int id = sc.nextInt();
-                    sc.nextLine();
-
-                    if (studentService.studentExists(id)){
-                        System.out.println("Student ID is already present");
-                        break;
-                    }
-
                     System.out.print("Enter Student Name: ");
                     String name = sc.nextLine();
 
@@ -60,15 +50,12 @@ public class Main {
                     sc.nextLine();
 
                     System.out.print("Enter student status (ACTIVE/INACTIVE/COMPLETED): ");
-
                     String statusInput = sc.nextLine().toUpperCase();
 
                     StudentStatus status = StudentStatus.valueOf(statusInput);
 
-                    Student student = new Student(id, name, email, attendance, status);
-
                     try {
-                        studentService.addStudent(student);
+                        studentService.addStudent(name, email, attendance, status);
                     } catch (StudentException e) {
                         System.out.println(e.getMessage());
                     }

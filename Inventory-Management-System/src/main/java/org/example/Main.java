@@ -8,6 +8,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         InventoryService inventoryService = new InventoryService();
+        inventoryService.loadProducts();
 
         boolean running = true;
 
@@ -24,15 +25,13 @@ public class Main {
             System.out.println("9. Delete Product");
             System.out.println("10. Exit");
 
-            System.out.print("Enter your choice: ");
+            System.out.print("\nEnter your choice: ");
             int choice = scanner.nextInt();
+            scanner.nextLine();
 
             switch (choice) {
 
                 case 1 -> {
-                    System.out.print("Enter Product ID: ");
-                    int productId = scanner.nextInt();
-                    scanner.nextLine();
 
                     System.out.print("Enter Product Name: ");
                     String productName = scanner.nextLine();
@@ -46,15 +45,7 @@ public class Main {
                     System.out.print("Enter Stock: ");
                     int stock = scanner.nextInt();
 
-                    Products product = new Products(
-                            productId,
-                            productName,
-                            category,
-                            price,
-                            stock
-                    );
-
-                    inventoryService.addProduct(product);
+                    inventoryService.addProduct(productName, category, price, stock);
                 }
 
                 case 2 -> {
@@ -102,6 +93,11 @@ public class Main {
                 case 5 -> {
                     System.out.print("Enter Product ID: ");
                     int productId = scanner.nextInt();
+
+                    if(!inventoryService.products.containsKey(productId)) {
+                        System.out.println("Product not found!");
+                        break;
+                    }
 
                     System.out.print("Enter Quantity to Sell: ");
                     int quantity = scanner.nextInt();
