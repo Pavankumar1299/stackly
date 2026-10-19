@@ -194,3 +194,5 @@ LEFT JOIN Service_Records
 ON Mechanics.mechanic_id=Service_Records.mechanic_id
 GROUP BY mechanic_name;
 
+desc mechanics;
+
