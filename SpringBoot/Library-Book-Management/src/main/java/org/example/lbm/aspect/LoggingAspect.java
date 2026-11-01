@@ -23,7 +23,7 @@ public class LoggingAspect {
         String methodName =
                 joinPoint.getSignature().toShortString();
 
-        log.info("➡️ Started: {}", methodName);
+        log.info("Started: {}", methodName);
 
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
@@ -33,7 +33,7 @@ public class LoggingAspect {
 
             stopWatch.stop();
 
-            log.info("✅ Completed: {} in {} ms",
+            log.info("Completed: {} in {} ms",
                     methodName, stopWatch.getTotalTimeMillis());
 
             return result;
@@ -43,7 +43,7 @@ public class LoggingAspect {
                 stopWatch.stop();
             }
 
-            log.error("❌ Failed: {} after {} ms",
+            log.error("Failed: {} after {} ms",
                     methodName, stopWatch.getTotalTimeMillis(), exception);
 
             throw exception;
